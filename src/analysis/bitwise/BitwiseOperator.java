@@ -1,3 +1,4 @@
+package analysis.bitwise;
 
 public class BitwiseOperator {
 	/**

@@ -1,3 +1,4 @@
+import analysis.bitwise.BitwiseOperator;
 
 public class Main {
 	public static void main(String args[]) {
