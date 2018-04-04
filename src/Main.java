@@ -1,35 +1,22 @@
-import analysis.bitwise.BitwiseOperator;
+import analysis.datastructure.stack.Stack;
 
 public class Main {
 	public static void main(String args[]) {
+		Stack<String> stack = new Stack<String>();
+		stack.empty();
+		stack.push("1");
+		stack.push("a");
+		stack.push("가");
+		//stack.printAll();
+		stack.top();
 		
-		BitwiseOperator bitwise_operator = new BitwiseOperator();
+		stack.push("2");
+		stack.push("3");
+		stack.push("b");
+		//stack.printAll();
 		
-		String a = "1010";
-		String b = "0101";
-		
-		int digit = 5;
-		
-		System.out.println(bitwise_operator.xor_operator(a, b));
-		System.out.println(bitwise_operator.or_operator(a, b));
-		System.out.println(bitwise_operator.and_operator(a, b));
-		System.out.println(bitwise_operator.not_operator(a));
-		
-		System.out.println(" === ");
-		
-		System.out.println(bitwise_operator.convert_dec_to_binary_with_digit(9, digit));
-		System.out.println(bitwise_operator.convert_dec_to_binary_with_digit(20, digit));
-		System.out.println(bitwise_operator.convert_dec_to_binary_with_digit(28, digit));
-		System.out.println(bitwise_operator.convert_dec_to_binary_with_digit(18, digit));
-		System.out.println(bitwise_operator.convert_dec_to_binary_with_digit(11, digit));
-		
-		System.out.println(" === ");
-		
-		System.out.println(bitwise_operator.convert_dec_to_binary_with_digit(30, digit));
-		System.out.println(bitwise_operator.convert_dec_to_binary_with_digit(1, digit));
-		System.out.println(bitwise_operator.convert_dec_to_binary_with_digit(21, digit));
-		System.out.println(bitwise_operator.convert_dec_to_binary_with_digit(17, digit));
-		System.out.println(bitwise_operator.convert_dec_to_binary_with_digit(28, digit));
-		
+		stack.pop();
+		stack.pop();
+		stack.printAll();
 	}
 }
