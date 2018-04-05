@@ -1,4 +1,4 @@
-package analysis.datastructure.stack;
+package data.structure.stack;
 
 /**
  * Use template

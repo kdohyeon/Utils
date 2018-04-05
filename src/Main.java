@@ -1,22 +1,22 @@
-import analysis.datastructure.stack.Stack;
+import algorithm.sort.MergeSort;
+import analysis.basics.random.RandomInteger;
+import analysis.basics.strings.ASCIICode;
 
 public class Main {
 	public static void main(String args[]) {
-		Stack<String> stack = new Stack<String>();
-		stack.empty();
-		stack.push("1");
-		stack.push("a");
-		stack.push("가");
-		//stack.printAll();
-		stack.top();
+		RandomInteger rn = new RandomInteger(20, 1, 500);
+		int[] unsorted = rn.getRandomNumber();
+		MergeSort ms = new MergeSort(unsorted);
 		
-		stack.push("2");
-		stack.push("3");
-		stack.push("b");
-		//stack.printAll();
+		ms.print();
 		
-		stack.pop();
-		stack.pop();
-		stack.printAll();
+		ASCIICode asciiCode = new ASCIICode("abcd");
+		asciiCode.printAsciiInChar();
+		
+		ASCIICode asciiCode2 = new ASCIICode(97);
+		System.out.println(asciiCode2.getAsciiInChar());
+		
+		ASCIICode asciiCode3 = new ASCIICode('a');
+		System.out.println(asciiCode3.getAsciiInInt());
 	}
 }
