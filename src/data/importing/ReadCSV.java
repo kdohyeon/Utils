@@ -34,7 +34,6 @@ public class ReadCSV {
 				}
 				
 				//System.out.println(header.size());
-				int cnt = 0;
 				while((line = inputStream.readLine()) != null){
 					
 					parseLine = line.split(",");
@@ -58,11 +57,7 @@ public class ReadCSV {
 						
 						
 					}
-					cnt++;
-					/*
-					if(cnt == 1)
-						break;
-					*/
+
 					//System.out.println("");
 				}
 				

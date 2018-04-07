@@ -4,8 +4,8 @@ import data.structure.node.Node;
 
 public class Queue<T> {
 	
-	private Node front;
-	private Node rear;
+	private Node<T> front;
+	private Node<T> rear;
 	
 	public Queue() {
 		this.front = null;
@@ -24,7 +24,7 @@ public class Queue<T> {
 	
 	public void insert(T item) {
 		System.out.println("Insert: " + item);
-		Node node = new Node(item);
+		Node<T> node = new Node<T>(item);
 		node.setNextNode(null);
 		
 		if(empty()) {
@@ -53,7 +53,7 @@ public class Queue<T> {
 	}
 	
 	public void print() {
-		Node tempNode = front;
+		Node<T> tempNode = front;
 		while(tempNode != null) {
 			System.out.print(tempNode.getElem() + " > ");
 			tempNode = tempNode.getNextNode();

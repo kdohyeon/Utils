@@ -10,7 +10,7 @@ public class Stack<T> {
 	/**
 	 * Variables
 	 * */
-	private Node top;
+	private Node<T> top;
 	private int stackSize;
 	
 	/**
@@ -28,7 +28,7 @@ public class Stack<T> {
 	public void push(T elem) {
 		System.out.println("Push: " + elem);
 		stackSize++;
-		Node newNode = new Node(elem);
+		Node<T> newNode = new Node<T>(elem);
 		newNode.setNextNode(top);
 		top = newNode;
 	}
@@ -87,8 +87,8 @@ public class Stack<T> {
 	 * */
 	public void print() {
 		
-		Node tempNode = top;
-		Node pointerNode = top;
+		Node<T> tempNode = top;
+		Node<T> pointerNode = top;
 		
 		int size = size();
 		for(int i = 0; i < size; i++) {

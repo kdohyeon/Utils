@@ -2,7 +2,7 @@ package data.structure.node;
 
 public class Node<T> {
 	private T elem;
-	private Node nextNode;
+	private Node<T> nextNode;
 	
 	
 	/**
@@ -17,7 +17,7 @@ public class Node<T> {
 		return elem;
 	}
 	
-	public Node getNextNode() {
+	public Node<T> getNextNode() {
 		return nextNode;
 	}
 	
@@ -25,7 +25,7 @@ public class Node<T> {
 		this.elem = elem;
 	}
 	
-	public void setNextNode(Node nextNode) {
+	public void setNextNode(Node<T> nextNode) {
 		this.nextNode = nextNode;
 	}
 }

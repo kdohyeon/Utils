@@ -8,7 +8,6 @@ public class InsertionSort extends AbstractSort {
 	
 	private int[] input;
 	private int maxSize;
-	private int minIndex;
 	
 	public InsertionSort(int[] input) {
 		super(input);
