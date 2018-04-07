@@ -1,7 +1,6 @@
 package algorithm.sort;
 
-public class InsertionSort extends AbstractSort {
-
+public class SelectionSort extends AbstractSort{
 	/**
 	 * Time complexity: n^2
 	 * */
@@ -10,11 +9,11 @@ public class InsertionSort extends AbstractSort {
 	private int maxSize;
 	private int minIndex;
 	
-	public InsertionSort(int[] input) {
+	public SelectionSort(int[] input) {
 		super(input);
 		this.input = input;
 		maxSize = input.length;
-		
+		minIndex = 0;
 		// TODO Auto-generated constructor stub
 		
 		sort();
@@ -22,13 +21,18 @@ public class InsertionSort extends AbstractSort {
 	
 	private void sort() {
 		int temp = 0;
-		int j = 0;
-		for(int i = 1; i < maxSize; i++) {
-			temp = input[i];
-			for(j = i-1; j >= 0 && temp < input[j]; j--) {
-				input[j+1] = input[j];
+		
+		for(int i = 0; i < maxSize-1; i++) {
+			minIndex = i;
+			for(int j = i+1; j < maxSize; j++) {
+				if(input[minIndex] > input[j]) {
+					minIndex = j;
+				}
 			}
-			input[j+1] = temp;
+			
+			temp = input[minIndex];
+			input[minIndex] = input[i];
+			input[i] = temp;
 		}
 	}
 
@@ -43,6 +47,4 @@ public class InsertionSort extends AbstractSort {
 		// TODO Auto-generated method stub
 		this.abstractPrint(input);
 	}
-
-
 }
