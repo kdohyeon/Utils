@@ -72,12 +72,4 @@ public class ASCIICode {
 		}
 		System.out.println("");
 	}
-	
-	
-	
-	// get input as Char
-	// return int for input
-	
-	// get input as Int
-	// return char for input
 }

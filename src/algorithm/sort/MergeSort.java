@@ -8,7 +8,7 @@ package algorithm.sort;
  * @since 2018. 04. 04
  * */
 
-public class MergeSort {
+public class MergeSort extends AbstractSort{
 	
 	private int[] sorted = null;
 	private int len = 0;
@@ -16,7 +16,10 @@ public class MergeSort {
 	//private int cnt = 0;
 	
 	public MergeSort(int[] input) {
-		len = input.length;
+		super(input);
+		System.out.println("MergeSort.java");
+		
+		len = this.getMaxSize();
 		sorted = new int[len];
 		sort(input, 0, len - 1);
 	}
