@@ -1,4 +1,4 @@
-package data.structure.stack;
+package data.structure.heap;
 
 public class Heap {
 	private int maxHeapSize;

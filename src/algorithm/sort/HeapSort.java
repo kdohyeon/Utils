@@ -1,6 +1,11 @@
 package algorithm.sort;
 
-import data.structure.stack.Heap;
+import data.structure.heap.Heap;
+
+/**
+ * @author kdohyeon
+ * Time complexity: nlog(n)
+ * */
 
 public class HeapSort extends AbstractSort{
 	private int maxHeapSize;

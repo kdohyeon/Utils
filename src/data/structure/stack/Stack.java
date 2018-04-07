@@ -1,5 +1,7 @@
 package data.structure.stack;
 
+import data.structure.node.Node;
+
 /**
  * Use template
  * */
@@ -27,7 +29,7 @@ public class Stack<T> {
 		System.out.println("Push: " + elem);
 		stackSize++;
 		Node newNode = new Node(elem);
-		newNode.nextNode = top;
+		newNode.setNextNode(top);
 		top = newNode;
 	}
 	
@@ -37,9 +39,9 @@ public class Stack<T> {
 	 * Print -1 if there is no element in the stack
 	 * */
 	public void pop() {
-		System.out.println("Pop: " + top.elem);
+		System.out.println("Pop: " + top.getElem());
 		stackSize--;
-		top = top.nextNode;
+		top = top.getNextNode();
 	}
 	
 	/**
@@ -75,8 +77,8 @@ public class Stack<T> {
 	 * Return the top element, and print the top element
 	 * */
 	public T top() {
-		System.out.println("Top: " + top.elem);
-		T elem = top.elem;
+		System.out.println("Top: " + top.getElem());
+		T elem = (T) top.getElem();;
 		return elem;
 	}
 	
@@ -90,12 +92,12 @@ public class Stack<T> {
 		
 		int size = size();
 		for(int i = 0; i < size; i++) {
-			System.out.print(tempNode.elem);
+			System.out.print(tempNode.getElem());
 			
-			if(pointerNode.nextNode != null) {
+			if(pointerNode.getNextNode() != null) {
 				System.out.print(" > ");
-				tempNode.elem = pointerNode.nextNode.elem;
-				pointerNode = pointerNode.nextNode;	
+				tempNode.setElem(pointerNode.getNextNode().getElem());
+				pointerNode = pointerNode.getNextNode();
 			}
 		}
 		System.out.println("");
@@ -106,21 +108,5 @@ public class Stack<T> {
 	 * */
 	public String getString() {
 		return top.toString();
-	}
-	
-	/**
-	 * Node
-	 * */
-	private class Node{
-		private T elem;
-		private Node nextNode;
-		
-		/**
-		 * Constructor
-		 * */
-		Node(T elem){
-			this.elem = elem;
-			this.nextNode = null;
-		}
 	}
 }
