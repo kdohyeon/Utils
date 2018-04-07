@@ -85,7 +85,7 @@ public class Stack<T> {
 	/**
 	 * Print all the element in the stack
 	 * */
-	public void printAll() {
+	public void print() {
 		
 		Node tempNode = top;
 		Node pointerNode = top;

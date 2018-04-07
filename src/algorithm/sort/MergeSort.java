@@ -76,17 +76,15 @@ public class MergeSort extends AbstractSort{
 		}
 	}
 	
-	/**
-	 * Print all the elements
-	 * */
-	public void print() {
-		for(int i = 0; i < len; i++) {
-			if(i == len - 1) {
-				System.out.print(sorted[i]);
-			}else {
-				System.out.print(sorted[i] + ", ");				
-			}
-		}
-		System.out.println("");
+	@Override
+	public void printSort() {
+		// TODO Auto-generated method stub
+		this.abstractPrint(sorted);
+	}
+
+	@Override
+	public int getElem(int index) {
+		// TODO Auto-generated method stub
+		return this.abstractGetElem(sorted, index);
 	}
 }

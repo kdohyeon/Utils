@@ -1,7 +1,7 @@
 import algorithm.sort.HeapSort;
-import algorithm.sort.MergeSort;
 import analysis.basics.random.RandomInteger;
 import data.structure.queue.Queue;
+import data.structure.stack.Stack;
 
 public class Main {
 	public static void main(String args[]) {
@@ -10,19 +10,21 @@ public class Main {
 		rn.printRandomNumber();
 		int[] unsorted = rn.getRandomNumber();
 		
-		MergeSort ms = new MergeSort(unsorted);
-		ms.print();
-		
+		Stack stack = new Stack();
 		HeapSort hs = new HeapSort(unsorted);
-		hs.print();
 		
-		Queue queue = new Queue(elemSize);
 		for(int i = 0; i < elemSize; i++) {
-			queue.insert(i);
+			stack.push(hs.getElem(i));
+		}
+		
+		stack.print();
+		stack.pop();
+		stack.print();
+		
+		Queue queue = new Queue();
+		for(int i = 0; i < elemSize; i++) {
+			queue.insert(hs.getElem(i));
 		}
 		queue.print();
-		queue.remove();
-		queue.print();
-		
 	}
 }

@@ -36,17 +36,15 @@ public class HeapSort extends AbstractSort{
 	}
 
 	@Override
-	public void print() {
+	public void printSort() {
 		// TODO Auto-generated method stub
-		for(int i = 0; i < maxHeapSize; i++) {
-			if(i == maxHeapSize - 1){
-				System.out.print(input[i]);
-			}else {
-				System.out.print(input[i] + ", ");	
-			}
-		}
-		
-		System.out.println("");
+		this.abstractPrint(input);
+	}
+
+	@Override
+	public int getElem(int index) {
+		// TODO Auto-generated method stub
+		return this.abstractGetElem(input, index);
 	}
 	
 	

@@ -1,64 +1,62 @@
 package data.structure.queue;
 
-public class Queue {
-	private int front;
-	private int end;
-	private int maxSize;
-	private int currSize;
-	private Object[] queue;
+import data.structure.node.Node;
+
+public class Queue<T> {
 	
-	public Queue(int maxSize) {
-		this.front = 0;
-		this.end = -1;
-		this.maxSize = maxSize;
-		this.currSize = 0;
-		this.queue = new Object[maxSize];
+	private Node front;
+	private Node rear;
+	
+	public Queue() {
+		this.front = null;
+		this.rear = null;
 	}
 	
 	public boolean empty() {
 		boolean result = false;
-		if(front == end + 1) {
+		
+		if(front == null) {
 			result = true;
-		}else {
-			result = false;
 		}
 		
 		return result;
 	}
 	
-	public boolean full() {
-		boolean result = false;
-		if(currSize == maxSize) {
-			result = true;
-		}else {
-			result = false;
-		}
-		
-		return result;
-	}
-	
-	public void insert(Object item) {
-		assert !full(): "Queue Full";
+	public void insert(T item) {
 		System.out.println("Insert: " + item);
-		queue[++end] = item;
-	}
-	
-	public Object peek() {
-		assert !empty(): "Queue Empty";
-		return queue[front];
-	}
-	
-	public Object remove() {
+		Node node = new Node(item);
+		node.setNextNode(null);
 		
-		Object item = peek();
+		if(empty()) {
+			rear = node;
+			front = node;
+		}else {
+			rear.setNextNode(node);
+			rear = node;
+		}
+	}
+	
+	public T peek() {
+		return (T) front.getElem();
+	}
+	
+	public T remove() {
+		T item = peek();
 		System.out.println("Remove: " + item);
-		front++;
+		front = front.getNextNode();
+		
+		if(front == null) {
+			rear = null;
+		}
+		
 		return item;
 	}
 	
 	public void print() {
-		for(int i = 0; i < maxSize; i++) {
-			System.out.print(queue[i] + ", ");
+		Node tempNode = front;
+		while(tempNode != null) {
+			System.out.print(tempNode.getElem() + " > ");
+			tempNode = tempNode.getNextNode();
 		}
 	}
 }

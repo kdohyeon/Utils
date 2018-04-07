@@ -14,7 +14,25 @@ public abstract class AbstractSort {
 		}
 	}
 	
-	public abstract void print();
+	public abstract int getElem(int index);
+	
+	public abstract void printSort();
+	
+	public int abstractGetElem(int[] arr, int index) {
+		return arr[index]; 
+	}
+	
+	public void abstractPrint(int[] arr) {
+		int size = arr.length;
+		for(int i = 0; i < size; i++) {
+			if(i == size - 1) {
+				System.out.print(arr[i]);
+			}else {
+				System.out.print(arr[i] + ", ");
+			}
+		}
+		System.out.println("");
+	};
 	
 	public int getMaxSize() {
 		return maxSize;
