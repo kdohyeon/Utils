@@ -1,3 +1,5 @@
+import analysis.basics.statistics.Divider;
+import analysis.basics.statistics.Divisor;
 import analysis.basics.strings.StringParser;
 import data.structure.tree.LinkedBinaryTree;
 
@@ -10,5 +12,8 @@ public class Main {
 		
 		StringParser sp = new StringParser(expression, delim);
 		parsed = sp.getParsedString();
+		
+		Divisor dvs = new Divisor(100);
+		dvs.printDivisor();
 	}
 }
